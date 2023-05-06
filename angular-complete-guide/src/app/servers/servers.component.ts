@@ -9,7 +9,7 @@ export class ServersComponent {
   allowNewServer = false;
   serverCreationStatus = '';
   serverName = '';
-  servers = ['Test Server', 'Test Server 2'];
+  servers = ['Test Server', 'Test Server 2', 'Test Server 3'];
 
   constructor() {
     setTimeout(() => {
