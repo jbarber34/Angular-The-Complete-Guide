@@ -7,8 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   userName = '';
+  showParagraph = true;
+  detailsLog = [];
 
   onResetUserName() {
     this.userName = '';
+  }
+
+  onDetailsClick() {
+    this.showParagraph = !this.showParagraph;
+    this.detailsLog.push(this.detailsLog.length + 1);
   }
 }

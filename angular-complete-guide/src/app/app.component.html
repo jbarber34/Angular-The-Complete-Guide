@@ -17,6 +17,19 @@
       >
         Reset User
       </button>
+      <div>
+        <button class="btn btn-primary" (click)="onDetailsClick()">
+          Display Details
+        </button>
+        <p *ngIf="showParagraph">Secret Password = tuna</p>
+        <div
+          *ngFor="let log of detailsLog"
+          [ngStyle]="{ backgroundColor: log >= 5 ? 'blue' : 'transparent' }"
+          [ngClass]="{ 'white-text': log >= 5 }"
+        >
+          {{ log }}
+        </div>
+      </div>
     </div>
   </div>
 </div>
