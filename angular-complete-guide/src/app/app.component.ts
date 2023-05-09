@@ -16,6 +16,7 @@ export class AppComponent {
 
   onDetailsClick() {
     this.showParagraph = !this.showParagraph;
-    this.detailsLog.push(this.detailsLog.length + 1);
+    // this.detailsLog.push(this.detailsLog.length + 1);
+    this.detailsLog.push(new Date());
   }
 }
