@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./server-element.component.css'],
 })
 export class ServerElementComponent implements OnInit {
-  @Input() element: { type: string; name: string; content: string };
+  // By setting alia 'srvElement', now have to use 'srvElement' for binding in HTML, element will no longer work
+  @Input('srvElement') element: { type: string; name: string; content: string };
 
   constructor() {}
 
