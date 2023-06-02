@@ -44,44 +44,44 @@ export class ServerElementComponent
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges called');
-    console.log(changes);
-    console.log('Test Content', this.header.nativeElement.textContent);
-    console.log(
-      'Test Content of Paragraph',
-      this.paragraph.nativeElement.textContent
-    );
+    // console.log('ngOnChanges called');
+    // console.log(changes);
+    // console.log('Test Content', this.header.nativeElement.textContent);
+    // console.log(
+    //   'Test Content of Paragraph',
+    //   this.paragraph.nativeElement.textContent
+    // );
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit called');
+    // console.log('ngOnInit called');
   }
 
   ngDoCheck(): void {
-    console.log('ngDoCheck called');
+    // console.log('ngDoCheck called');
   }
 
   ngAfterContentInit(): void {
-    console.log('ngAfterContentInit called');
-    console.log(
-      'Test Content of Paragraph',
-      this.paragraph.nativeElement.textContent
-    );
+    // console.log('ngAfterContentInit called');
+    // console.log(
+    //   'Test Content of Paragraph',
+    //   this.paragraph.nativeElement.textContent
+    // );
   }
 
   ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked called');
+    // console.log('ngAfterContentChecked called');
   }
 
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit called');
-    console.log('Test Content', this.header.nativeElement.textContent);
+    // console.log('ngAfterViewInit called');
+    // console.log('Test Content', this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked called');
+    // console.log('ngAfterViewChecked called');
   }
   ngOnDestroy(): void {
-    console.log('ngOnDestroy called');
+    // console.log('ngOnDestroy called');
   }
 }
