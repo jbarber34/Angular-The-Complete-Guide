@@ -93,4 +93,56 @@
       <p>Gender: {{ user.gender }}</p>
     </div>
   </div>
+
+  <form (ngSubmit)="onSubmitForm()" #signupForm="ngForm">
+    <div class="form-group">
+      <label for="email">Mail</label>
+      <input
+        type="email"
+        id="email2"
+        ngModel
+        name="email"
+        required
+        email
+        class="form-control"
+        #email2="ngModel"
+      />
+      <span class="help-block" *ngIf="!email2.valid && email2.touched"
+        >Please enter a valid email!</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="subscription">Choose a Subscription</label>
+      <select
+        name="subscription"
+        id="subscription"
+        [ngModel]="selectedSubscription"
+        class="form-control"
+      >
+        <option
+          *ngFor="let subscription of subscriptions"
+          [value]="subscription"
+        >
+          {{ subscription }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        ngModel
+        required
+        class="form-control"
+        #password="ngModel"
+      />
+      <span class="help-block" *ngIf="!password.valid && password.touched"
+        >Please enter a valid password!</span
+      >
+    </div>
+    <p *ngIf="!signupForm.valid && signupForm.touched">The form is invalid!</p>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
 </div>
