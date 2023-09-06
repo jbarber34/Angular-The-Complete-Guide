@@ -77,6 +77,82 @@
         >
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
+      <hr />
+      <form [formGroup]="assignmentForm" (ngSubmit)="onAssignmentSubmit()">
+        <div formGroupName="assignmentData">
+          <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input
+              type="text"
+              id="projectName"
+              [formControlName]="'projectName'"
+              class="form-control"
+            />
+            <span
+              *ngIf="
+                !assignmentForm.get('assignmentData.projectName').valid &&
+                assignmentForm.get('assignmentData.projectName').touched
+              "
+              class="help-block"
+            >
+              <span
+                *ngIf="
+                  assignmentForm.get('assignmentData.projectName').errors[
+                    'projectNameIsForbidden'
+                  ]
+                "
+              >
+                This project name is invalid!
+              </span>
+              <span
+                *ngIf="
+                  assignmentForm.get('assignmentData.projectName').errors[
+                    'required'
+                  ]
+                "
+              >
+                Please enter a valid username!
+              </span>
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              type="text"
+              id="email"
+              [formControlName]="'email'"
+              class="form-control"
+            />
+            <span
+              *ngIf="
+                !assignmentForm.get('assignmentData.email').valid &&
+                assignmentForm.get('assignmentData.email').touched
+              "
+              class="help-block"
+              >Please enter a valid email!</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projectStatus">Project Status</label>
+          <select
+            id="projectStatus"
+            [formControlName]="'projectStatus'"
+            class="form-control"
+          >
+            <option *ngFor="let status of statuses" [value]="status">
+              {{ status }}
+            </option>
+          </select>
+        </div>
+        <span
+          *ngIf="!assignmentForm.valid && assignmentForm.touched"
+          class="help-block"
+          >Please enter a valid project name and email!</span
+        >
+        <button class="btn btn-primary" type="submit">Create Project</button>
+      </form>
     </div>
   </div>
 </div>
