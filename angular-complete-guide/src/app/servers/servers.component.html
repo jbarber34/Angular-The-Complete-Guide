@@ -10,6 +10,9 @@
   Add Server
 </button>
 <!-- <p>{{ allowNewServer }}</p> -->
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreationStatus.length > 0">
+  {{ serverCreationStatus }}
+</p>
 <app-server></app-server>
 <app-server></app-server>
