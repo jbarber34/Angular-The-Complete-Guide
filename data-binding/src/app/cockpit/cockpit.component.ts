@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cockpit.component.css'],
 })
 export class CockpitComponent implements OnInit {
+  serverElements = [];
   newServerName = '';
   newServerContent = '';
   constructor() {}
