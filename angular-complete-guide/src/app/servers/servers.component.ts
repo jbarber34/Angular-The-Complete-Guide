@@ -26,4 +26,9 @@ export class ServersComponent {
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
+
+  onRemoveServer(id: number) {
+    const position = id;
+    this.servers.splice(position, 1);
+  }
 }
