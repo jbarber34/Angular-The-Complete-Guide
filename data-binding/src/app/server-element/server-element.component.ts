@@ -5,11 +5,13 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  ElementRef,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
   SimpleChanges,
+  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 
@@ -33,6 +35,7 @@ export class ServerElementComponent
   // By setting alia 'srvElement', now have to use 'srvElement' for binding in HTML, element will no longer work
   @Input('srvElement') element: { type: string; name: string; content: string };
   @Input() name: string;
+  @ViewChild('heading', { static: true }) header: ElementRef;
 
   constructor() {
     console.log('constructor called');
@@ -41,6 +44,7 @@ export class ServerElementComponent
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges called');
     console.log(changes);
+    console.log('Test Content', this.header.nativeElement.textContent);
   }
 
   ngOnInit(): void {
@@ -61,6 +65,7 @@ export class ServerElementComponent
 
   ngAfterViewInit(): void {
     console.log('ngAfterViewInit called');
+    console.log('Test Content', this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked(): void {
