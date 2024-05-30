@@ -15,6 +15,11 @@ export class CounterControlsComponent {
     this.store.dispatch(increment({ value: 2 }));
   }
 
+  // Alternativve way to dispatch using action class
+  // increment() {
+  //   this.store.dispatch(new IncrementAction(2));
+  // }
+
   decrement() {
     this.store.dispatch(decrement({ value: 1 }));
   }
